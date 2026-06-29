@@ -228,6 +228,7 @@ Fine-Tuning-PS-LLM/
 │
 ├── figures/                          # All evaluation figures (publication quality)
 │   ├── Fine-Tuning-PS-LLM_Pipeline.png
+│   ├── Progressive_alignment_pipeline_diagram.png
 │   ├── DPO_preference_data_creation_flowchart.png
 │   ├── Progressive_alignment_performance_comparison.png
 │   ├── metrics_comparison.png
