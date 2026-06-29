@@ -1,0 +1,25 @@
+,precision,recall,f1-score,support,Model
+Disagreeing with suggestions/ideas,0.0,0.0,0.0,4.0,Baseline
+Drawing attention to errors,0.0,0.0,0.0,1.0,Baseline
+Expressing concerns,0.3333333333333333,1.0,0.5,3.0,Baseline
+Recommending changes,0.0,0.0,0.0,3.0,Baseline
+Seeking help,0.0,0.0,0.0,1.0,Baseline
+accuracy,0.25,0.25,0.25,0.25,Baseline
+macro avg,0.06666666666666667,0.2,0.1,12.0,Baseline
+weighted avg,0.08333333333333333,0.25,0.125,12.0,Baseline
+Disagreeing with suggestions/ideas,1.0,0.25,0.4,4.0,SFT
+Drawing attention to errors,0.0,0.0,0.0,1.0,SFT
+Expressing concerns,0.375,1.0,0.5454545454545454,3.0,SFT
+Recommending changes,1.0,0.3333333333333333,0.5,3.0,SFT
+Seeking help,1.0,1.0,1.0,1.0,SFT
+accuracy,0.5,0.5,0.5,0.5,SFT
+macro avg,0.675,0.5166666666666666,0.4890909090909091,12.0,SFT
+weighted avg,0.7604166666666666,0.5,0.478030303030303,12.0,SFT
+Disagreeing with suggestions/ideas,1.0,1.0,1.0,4.0,DPO
+Drawing attention to errors,0.0,0.0,0.0,1.0,DPO
+Expressing concerns,0.6,1.0,0.75,3.0,DPO
+Recommending changes,1.0,1.0,1.0,3.0,DPO
+Seeking help,0.0,0.0,0.0,1.0,DPO
+accuracy,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334,DPO
+macro avg,0.52,0.6,0.55,12.0,DPO
+weighted avg,0.7333333333333334,0.8333333333333334,0.7708333333333334,12.0,DPO

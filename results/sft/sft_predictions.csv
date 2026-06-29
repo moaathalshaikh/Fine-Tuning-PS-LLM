@@ -1,0 +1,97 @@
+quote_id,gold_category,predicted_category,raw_response
+Quote 71,Disagreeing with suggestions/ideas,Disagreeing with suggestions/ideas,"```json
+[
+    {
+        ""id_quote"": ""Quote 71"",
+        ""category"": ""Disagreeing with suggestions/ideas"",
+        ""challenge_identified"": ""Should the developer shoot down the idea because it adds unimaginable complexity and security vulnerabilities, or should he do what's asked?"",
+        ""related_quote"": ""Should the developer shoot down the idea because it adds unimaginable complexity and security vulnerabilities, or should he do what's asked?""
+    }
+]
+```"
+Quote 57,Expressing concerns,Expressing concerns,"```json
+[
+    {
+        ""id_quote"": ""Quote 57"",
+        ""category"": ""Expressing concerns"",
+        ""challenge_identified"": ""Agile team misses sprint commitments by significant amounts."",
+        ""related_quote"": ""I am on the product side and have an agile team that has missed every sprint commitment through the first 4 by between 40 and 60% measured by points. [...] The team continues to say, that it is OK"
+Quote 84,Seeking help,Seeking help,"```json
+[
+    {
+        ""id_quote"": ""Quote 84"",
+        ""category"": ""Seeking help"",
+        ""challenge_identified"": ""A colleague frequently requests working code from everyone, which disrupts their concentration."",
+        ""related_quote"": ""I have a strange situation at work, where a colleague of mine often asks me and other co-workers for working code. [...] I would like to help him, but this constant request of trivial snippets interrupts my thoughts"
+Quote 110,Disagreeing with suggestions/ideas,Expressing concerns,"```json
+[
+    {
+        ""id_quote"": ""Quote 110"",
+        ""category"": ""Expressing concerns"",
+        ""challenge_identified"": ""I get scared voices from CTOs saying deadlines are too tight, leading to shortened deadlines which put extra pressure on programmers."",
+        ""related_quote"": ""To do this I have discussion with related team players and calculate a deadline estimation. [...] Sometimes, I got a scared voice from CTO saying that the estimated"
+Quote 27,Recommending changes,Expressing concerns,"```json
+[
+    {
+        ""id_quote"": ""Quote 27"",
+        ""category"": ""Expressing concerns"",
+        ""challenge_identified"": ""Concerns about the importance of video calls during Scrum ceremonies."",
+        ""related_quote"": ""How to influence a scrum team to do something you as a SM feel is beneficial to the team. [...] I was thinking of talking individually to each and explain why seeing their faces is important for me to do my job"
+Quote 12,Disagreeing with suggestions/ideas,Expressing concerns,"```json
+[
+    {
+        ""id_quote"": ""Quote 12"",
+        ""category"": ""Expressing concerns"",
+        ""challenge_identified"": ""Complications in story-point estimates are often exaggerated."",
+        ""related_quote"": ""How should a Scrum master handle disagreement about story-point estimates in Scrum? [...] \""I understand your opinion, but don't think those complications are valid.\"" [...] The 20-point voters say, \""The past tells us"
+Quote 54,Expressing concerns,Expressing concerns,"```json
+[
+    {
+        ""id_quote"": ""Quote 54"",
+        ""category"": ""Expressing concerns"",
+        ""challenge_identified"": ""Some people are very comfortable to talk and share ideas/knowledge in order to help the team to define tasks for our stories, but some people (usually more than half of the team) simply left the meeting without even speak out once."",
+        ""related_quote"": ""Some people are very comfortable to talk and share ideas"
+Quote 05,Recommending changes,Expressing concerns,"```json
+[
+    {
+        ""id_quote"": ""Quote 05"",
+        ""category"": ""Expressing concerns"",
+        ""challenge_identified"": ""How can I deal with a developer who isn't on board with a new PM and programming framework?"",
+        ""related_quote"": ""How can I deal with a developer who isn't on board with a new PM and programming framework? [...] but I just can't seem to get this person on board by committing to our"
+Quote 89,Recommending changes,Recommending changes,"```json
+[
+    {
+        ""id_quote"": ""Quote 89"",
+        ""category"": ""Recommending changes"",
+        ""challenge_identified"": ""What is the best way to introduce standards and process improvements so that the degree of push back and resistance from developers is minimized?"",
+        ""related_quote"": ""What is the best way to introduce standards and process improvements so that the degree of push back and resistance from developers is minimized?""
+    }
+]
+```"
+Quote 48,Disagreeing with suggestions/ideas,Drawing attention to errors,"```json
+[
+    {
+        ""id_quote"": ""Quote 48"",
+        ""category"": ""Drawing attention to errors"",
+        ""challenge_identified"": ""FP project is running over the time without visible end date."",
+        ""related_quote"": ""We have got the situation when our FP project is running over the time without visible end date. The initial agreed scope is accomplished so we would like to release the team.""
+    }
+]
+```"
+Quote 43,Drawing attention to errors,Expressing concerns,"```json
+[
+    {
+        ""id_quote"": ""Quote 43"",
+        ""category"": ""Expressing concerns"",
+        ""challenge_identified"": ""I have been bitten in the past for being too honest with my feelings when project leaders drop the ball."",
+        ""related_quote"": ""how do I hold a project leaders' feet to the fire without offending? [...] I have been bitten in the past for being too honest with my feelings when project leaders drop the ball"
+Quote 95,Expressing concerns,Expressing concerns,"```json
+[
+    {
+        ""id_quote"": ""Quote 95"",
+        ""category"": ""Expressing concerns"",
+        ""challenge_identified"": ""Cutting through long discussions without inhibiting innovation"",
+        ""related_quote"": ""In a software team, how do you cut through these long discussions without inhibiting innovation, so that a decision can be made and you can get on to solving the real business problems.""
+    }
+]
+```"

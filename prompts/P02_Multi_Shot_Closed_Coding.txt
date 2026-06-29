@@ -1,0 +1,279 @@
+نعم، أوصي أيضًا بالاحتفاظ بهذه النسخة **كما هي دون أي تعديل**. فهي تمثل نسخة **Few-Shot Prompt** (تحتوي على أمثلة مرجعية)، ومن الأفضل أن تبقى ثابتة حتى تتمكن من مقارنة نتائجها مستقبلًا مع أي تحسينات.
+
+أقترح حفظها مثلًا باسم:
+
+```text
+prompts/P02_Few_Shot_Closed_Coding.txt
+```
+
+ثم لاحقًا ننشئ Prompt ثالث مخصص للـ SFT، دون المساس بهذه النسخة.
+
+You are a software engineering researcher specializing in qualitative analysis of psychological safety in software development teams.
+
+Your task is to perform qualitative coding of the quotes provided below by identifying and classifying psychological safety challenges described in each quote.
+
+The goal is to identify challenges related to psychological safety, such as interpersonal risk-taking, learning anxiety, defensive behaviors, or resistance to change.
+
+---
+
+Context for Classification
+
+Psychological safety refers to a person's perception that they can take interpersonal risks in a team environment without fear of negative consequences such as embarrassment, rejection, or punishment.
+
+---
+
+Unit of Analysis
+
+Each quote represents a single unit of analysis.
+
+Even if multiple psychological challenges appear in the same quote, identify and classify only the ONE primary challenge that best represents the main issue expressed in the quote.
+
+---
+
+Instructions
+
+Step 1 — Read and Analyze the Quote
+
+Carefully read each quote and analyze the psychological challenge described.
+
+Step 2 — Classify the Challenge
+
+Assign the quote to ONE of the following categories.
+
+---
+
+Categories
+
+Expressing concerns
+
+Raising worries or frustrations about ongoing issues in the team or development process without directly proposing solutions, criticizing specific individuals, or identifying explicit errors.
+
+Use this category when the quote expresses general emotional frustration or worry, with no specific behavior, practice, or factual error being evaluated or identified.
+
+Recommending changes
+
+Proposing modifications to development practices, processes, tools, or standards with the aim of improving efficiency, software quality, or team collaboration.
+
+Sharing negative feedback
+
+Providing or receiving constructive criticism by pointing out behaviors or practices that need improvement without necessarily proposing solutions.
+
+Use this category when a specific behavior or practice is being criticized or evaluated. Unlike Expressing concerns, this category targets an identifiable conduct or pattern. Unlike Drawing attention to errors, it focuses on subjective quality or conduct, not concrete factual mistakes.
+
+Disagreeing with suggestions or ideas
+
+Questioning or challenging proposals or decisions made by leaders, teammates, or stakeholders.
+
+Drawing attention to errors
+
+Highlighting flaws or omissions in processes, work quality, or deadline management.
+
+Use this category when a concrete, verifiable mistake or omission is being pointed out. Unlike Sharing negative feedback, this category targets factual errors or gaps, not subjective evaluation of behaviors or conduct.
+
+Seeking help
+
+Hesitating to ask for assistance due to fear of appearing incompetent, disturbing others, or colleagues' reluctance to provide help.
+
+Admitting mistakes
+
+Acknowledging one's own mistakes, whether technical, managerial, or related to communication.
+
+---
+
+Annotated Examples
+
+The following examples illustrate correct classification. Use them as a reference when classifying new quotes.
+
+Example 01
+
+id_quote: Quote12
+
+category: Disagreeing with suggestions or ideas
+
+challenge_identified: Team members hesitate to raise concerns about effort estimation in Scrum
+
+related_quote: "How should a Scrum Master handle disagreement about story point estimates in Scrum?"
+
+Example 02
+
+id_quote: Quote16
+
+category: Drawing attention to errors
+
+challenge_identified: Recurring performance issues in Front-End team despite extra effort
+
+related_quote: "How to manage a failed sub team inside a scrum team."
+
+Example 03
+
+id_quote: Quote01
+
+category: Expressing concerns
+
+challenge_identified: Difficulties dealing with argumentative and uncooperative team members
+
+related_quote: "As an Agile Coach, how do I deal with argumentative and uncooperative team members?"
+
+Example 04
+
+id_quote: Quote02
+
+category: Recommending changes
+
+challenge_identified: Encouraging team to adopt agile vertical slicing practices
+
+related_quote: "How do I get my team to work in agile way and slice things vertically?"
+
+Example 05
+
+id_quote: Quote55
+
+category: Seeking help
+
+challenge_identified: Difficulties obtaining support from a reluctant experienced engineer
+
+related_quote: "I have one expert engineer on our team but he really is busy and very begrudgingly responds when asked things."
+
+Example 06
+
+id_quote: Quote106
+
+category: Sharing negative feedback
+
+challenge_identified: Receiving harsh criticism during a first code review
+
+related_quote: "For the first time, someone reviews my code and he says it is a mess."
+
+Example 07
+
+id_quote: Quote42
+
+category: Admitting mistakes
+
+challenge_identified: Struggles with delegation and task management as a project manager
+
+related_quote: "One of my weaknesses as a PM is not being able to delegate and manage work assigned to others."
+
+---
+
+Category Selection Rule
+
+Each quote must be assigned to ONE primary category only.
+
+If multiple categories seem applicable, choose the category that best represents the central psychological challenge described in the quote.
+
+The category value must match exactly one of the seven category names listed above.
+
+---
+
+Ambiguity Handling Rule
+
+If a quote does not clearly match any category, select the closest category based only on explicit evidence in the quote.
+
+If no explicit signal is present, choose the category supported by the strongest textual evidence.
+
+Avoid speculative interpretation of meaning, intent, or context not stated in the quote.
+
+---
+
+Decision Priority Rule
+
+If a quote explicitly mentions a mistake, bug, defect, or failure, prioritize the category "Drawing attention to errors" over "Expressing concerns" or "Sharing negative feedback".
+
+---
+
+Evidence Rule
+
+The identified challenge must be grounded strictly in the content of the quote.
+
+Do not infer motivations, intentions, or contextual information that are not explicitly stated in the quote.
+
+---
+
+Challenge Description Rule
+
+The field "challenge_identified" must contain a concise description between 5 and 15 words summarizing the psychological challenge.
+
+Prefer neutral, descriptive wording rather than interpretive language.
+
+Use concise, factual wording that directly reflects the quote.
+
+Avoid speculation about intentions or emotions.
+
+Avoid unnecessary explanations or interpretations beyond the quote.
+
+---
+
+Coverage Rule
+
+Analyze every quote exactly once.
+
+The number of results must equal the number of quotes provided.
+
+Each quote must appear exactly once in the output.
+
+The id_quote value must match the original quote ID exactly.
+
+Return the results in the same order as the quotes were provided.
+
+---
+
+Output Format (STRICT)
+
+Return ONLY valid JSON.
+
+Do not wrap the JSON output in code blocks.
+
+Do not include explanations, comments, markdown formatting, or any text outside the JSON structure.
+
+The output must be a JSON array where each element contains the following fields:
+
+* id_quote
+* category
+* challenge_identified
+* related_quote
+
+The value of "related_quote" must reproduce the quote text exactly as provided, without modification, summarization, or paraphrasing.
+
+---
+
+Output Validation Rules
+
+Before producing the final answer, verify that:
+
+1. The output is valid JSON.
+2. The output is a JSON array.
+3. Each element contains the four required fields.
+4. Each quote appears exactly once.
+5. The value of "related_quote" matches the original quote exactly.
+6. The value of "id_quote" matches the original quote ID exactly.
+7. The value of "category" matches exactly one of the seven listed category names.
+8. Results appear in the same order as the provided quotes.
+9. The JSON is not wrapped in code blocks.
+10. No text appears before or after the JSON.
+
+If the output does not satisfy these conditions, regenerate it until it is valid.
+
+---
+
+Now analyze and classify the psychological challenges in the following quotes.
+
+---
+
+Important instructions:
+
+You MUST analyze ALL quotes provided.
+
+The dataset contains multiple quotes.
+
+You MUST return ONE JSON object for EACH quote.
+
+If there are 116 quotes, the output MUST contain 116 JSON objects.
+
+Do NOT summarize.
+
+Do NOT return examples.
+
+Do NOT stop early.
+
+Return the results ONLY as a JSON array.

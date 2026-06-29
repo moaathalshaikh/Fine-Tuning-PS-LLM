@@ -1,0 +1,10 @@
+Quote ID,Gold Category,Baseline Prediction,SFT Prediction,DPO Prediction
+Quote 71,Disagreeing with suggestions/ideas,Drawing attention to errors,Disagreeing with suggestions/ideas,Disagreeing with suggestions/ideas
+Quote 84,Seeking help,Expressing concerns,Seeking help,Expressing concerns
+Quote 110,Disagreeing with suggestions/ideas,Expressing concerns,Expressing concerns,Disagreeing with suggestions/ideas
+Quote 27,Recommending changes,Expressing concerns,Expressing concerns,Recommending changes
+Quote 12,Disagreeing with suggestions/ideas,Drawing attention to errors,Expressing concerns,Disagreeing with suggestions/ideas
+Quote 05,Recommending changes,Expressing concerns,Expressing concerns,Recommending changes
+Quote 89,Recommending changes,Expressing concerns,Recommending changes,Recommending changes
+Quote 48,Disagreeing with suggestions/ideas,Drawing attention to errors,Drawing attention to errors,Disagreeing with suggestions/ideas
+Quote 43,Drawing attention to errors,Expressing concerns,Expressing concerns,Expressing concerns

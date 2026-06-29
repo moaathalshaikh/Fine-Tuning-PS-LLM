@@ -1,0 +1,13 @@
+Quote ID,Gold Category,Baseline Prediction,SFT Prediction,DPO Prediction,Baseline Correct,SFT Correct,DPO Correct
+Quote 71,Disagreeing with suggestions/ideas,Drawing attention to errors,Disagreeing with suggestions/ideas,Disagreeing with suggestions/ideas,False,True,True
+Quote 57,Expressing concerns,Expressing concerns,Expressing concerns,Expressing concerns,True,True,True
+Quote 84,Seeking help,Expressing concerns,Seeking help,Expressing concerns,False,True,False
+Quote 110,Disagreeing with suggestions/ideas,Expressing concerns,Expressing concerns,Disagreeing with suggestions/ideas,False,False,True
+Quote 27,Recommending changes,Expressing concerns,Expressing concerns,Recommending changes,False,False,True
+Quote 12,Disagreeing with suggestions/ideas,Drawing attention to errors,Expressing concerns,Disagreeing with suggestions/ideas,False,False,True
+Quote 54,Expressing concerns,Expressing concerns,Expressing concerns,Expressing concerns,True,True,True
+Quote 05,Recommending changes,Expressing concerns,Expressing concerns,Recommending changes,False,False,True
+Quote 89,Recommending changes,Expressing concerns,Recommending changes,Recommending changes,False,True,True
+Quote 48,Disagreeing with suggestions/ideas,Drawing attention to errors,Drawing attention to errors,Disagreeing with suggestions/ideas,False,False,True
+Quote 43,Drawing attention to errors,Expressing concerns,Expressing concerns,Expressing concerns,False,False,False
+Quote 95,Expressing concerns,Expressing concerns,Expressing concerns,Expressing concerns,True,True,True
