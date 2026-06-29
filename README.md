@@ -75,44 +75,11 @@ This project directly addresses the question:
 
 ---
 
-## Research Pipeline
+## Progressive Alignment Pipeline
 
-```
-┌─────────────────────┐
-│  1. Dataset         │  Gold-standard annotations from EASE 2026 paper
-│     Preparation     │  116 developer quotes · 7 PS categories
-└────────┬────────────┘
-         │
-┌────────▼────────────┐
-│  2. Prompt          │  Structured instruction prompt (P01)
-│     Engineering     │  Few-shot examples · JSON output format
-└────────┬────────────┘
-         │
-┌────────▼────────────┐
-│  3. Baseline        │  Zero-shot evaluation on Qwen2.5-1.5B-Instruct
-│     Evaluation      │  No task-specific adaptation
-└────────┬────────────┘
-         │
-┌────────▼────────────┐
-│  4. Supervised      │  LoRA fine-tuning · PEFT · Instruction format
-│     Fine-Tuning     │  SFT checkpoints · Adapter weights
-└────────┬────────────┘
-         │
-┌────────▼────────────┐
-│  5. Preference      │  Constructed from SFT errors · Chosen/Rejected pairs
-│     Dataset         │  52 preference pairs · Category-level disambiguation
-└────────┬────────────┘
-         │
-┌────────▼────────────┐
-│  6. Direct Pref.    │  TRL-based DPO training on SFT adapter
-│     Optimization    │  Preference-based alignment without RL reward model
-└────────┬────────────┘
-         │
-┌────────▼────────────┐
-│  7. Evaluation      │  Accuracy · Macro F1 · Weighted F1 · Confusion Matrix
-│     & Analysis      │  Error analysis · Prediction distribution comparison
-└─────────────────────┘
-```
+<p align="center">
+  <img src="figures/Progressive_alignment_pipeline_diagram.png" alt="Progressive Alignment Pipeline" width="100%"/>
+</p>
 
 ---
 
@@ -132,9 +99,15 @@ Key configuration:
 - **Training framework:** Hugging Face `transformers` + `trl` SFT Trainer
 - **Optimizer:** AdamW with cosine LR schedule
 
-### Stage 3 — Direct Preference Optimization (DPO)
+### Stage 3 — DPO Preference Dataset Construction
 
 Preference pairs are constructed systematically from SFT model errors: cases where the SFT model misclassified a quote are used to generate `(chosen, rejected)` pairs where `chosen` is the gold-standard category and `rejected` is the model's incorrect prediction. This approach grounds preference data in actual model failure modes rather than arbitrary human intuitions.
+
+<p align="center">
+  <img src="figures/DPO_preference_data_creation_flowchart.png" alt="DPO Preference Data Creation Flowchart" width="85%"/>
+</p>
+
+### Stage 4 — Direct Preference Optimization (DPO)
 
 The DPO training step uses the **TRL `DPOTrainer`**, initializing from the SFT adapter, and optimizes the model to assign higher likelihood to correct classifications over confusable alternatives — particularly relevant given the known inter-category ambiguity between *Expressing Concerns*, *Sharing Negative Feedback*, and *Drawing Attention to Errors* identified in the original paper.
 
@@ -167,6 +140,12 @@ The DPO training step uses the **TRL `DPOTrainer`**, initializing from the SFT a
 ---
 
 ## Results
+
+### Progressive Alignment Performance
+
+<p align="center">
+  <img src="figures/Progressive_alignment_performance_comparison.png" alt="Progressive Alignment Performance Comparison" width="80%"/>
+</p>
 
 ### Metrics Comparison
 
@@ -266,8 +245,7 @@ Fine-Tuning-PS-LLM/
 │
 ├── report/                           # Technical report (ACM format)
 │   └── Fine-Tuning-PS-LLM_Technical_Report.pdf
-│   
-│   │
+│
 ├── outputs/                          # Intermediate outputs
 │
 ├── prompts/
